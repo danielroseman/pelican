@@ -6,23 +6,23 @@ import os
 
 global ANSI
 ANSI = {
-    'gray' : lambda(text) : u'\033[1;30m' + unicode(text) + u'\033[1;m',
-    'red' : lambda(text) : u'\033[1;31m' + unicode(text) + u'\033[1;m',
-    'green' : lambda(text) : u'\033[1;32m' + unicode(text) + u'\033[1;m',
-    'yellow' : lambda(text) : u'\033[1;33m' + unicode(text) + u'\033[1;m',
-    'blue' : lambda(text) : u'\033[1;34m' + unicode(text) + u'\033[1;m',
-    'magenta' : lambda(text) : u'\033[1;35m' + unicode(text) + u'\033[1;m',
-    'cyan' : lambda(text) : u'\033[1;36m' + unicode(text) + u'\033[1;m',
-    'white' : lambda(text) : u'\033[1;37m' + unicode(text) + u'\033[1;m',
-    'bgred' : lambda(text) : u'\033[1;41m' + unicode(text) + u'\033[1;m',
-    'bggreen' : lambda(text) : u'\033[1;42m' + unicode(text) + u'\033[1;m',
-    'bgbrown' : lambda(text) : u'\033[1;43m' + unicode(text) + u'\033[1;m',
-    'bgblue' : lambda(text) : u'\033[1;44m' + unicode(text) + u'\033[1;m',
-    'bgmagenta' : lambda(text) : u'\033[1;45m' + unicode(text) + u'\033[1;m',
-    'bgcyan' : lambda(text) : u'\033[1;46m' + unicode(text) + u'\033[1;m',
-    'bggray' : lambda(text) : u'\033[1;47m' + unicode(text) + u'\033[1;m',
-    'bgyellow' : lambda(text) : u'\033[1;43m' + unicode(text) + u'\033[1;m',
-    'bggrey' : lambda(text) : u'\033[1;100m' + unicode(text) + u'\033[1;m'
+    'gray' : lambda(text) : u'\033[1;30m' + unicode(text) + u'\033[1;0m',
+    'red' : lambda(text) : u'\033[1;31m' + unicode(text) + u'\033[1;0m',
+    'green' : lambda(text) : u'\033[1;32m' + unicode(text) + u'\033[1;0m',
+    'yellow' : lambda(text) : u'\033[1;33m' + unicode(text) + u'\033[1;0m',
+    'blue' : lambda(text) : u'\033[1;34m' + unicode(text) + u'\033[1;0m',
+    'magenta' : lambda(text) : u'\033[1;35m' + unicode(text) + u'\033[1;0m',
+    'cyan' : lambda(text) : u'\033[1;36m' + unicode(text) + u'\033[1;0m',
+    'white' : lambda(text) : u'\033[1;37m' + unicode(text) + u'\033[1;0m',
+    'bgred' : lambda(text) : u'\033[1;41m' + unicode(text) + u'\033[1;0m',
+    'bggreen' : lambda(text) : u'\033[1;42m' + unicode(text) + u'\033[1;0m',
+    'bgbrown' : lambda(text) : u'\033[1;43m' + unicode(text) + u'\033[1;0m',
+    'bgblue' : lambda(text) : u'\033[1;44m' + unicode(text) + u'\033[1;0m',
+    'bgmagenta' : lambda(text) : u'\033[1;45m' + unicode(text) + u'\033[1;0m',
+    'bgcyan' : lambda(text) : u'\033[1;46m' + unicode(text) + u'\033[1;0m',
+    'bggray' : lambda(text) : u'\033[1;47m' + unicode(text) + u'\033[1;0m',
+    'bgyellow' : lambda(text) : u'\033[1;43m' + unicode(text) + u'\033[1;0m',
+    'bggrey' : lambda(text) : u'\033[1;100m' + unicode(text) + u'\033[1;0m'
 }
 
 
