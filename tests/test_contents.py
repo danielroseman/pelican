@@ -51,3 +51,32 @@ class TestPage(TestCase):
         # if no title is given, there is no save_as
         page = Page('content')
         self.assertFalse(hasattr(page, 'save_as'))
+
+    def test_clean_urls(self):
+        # test interaction of the various CLEAN_URLS settings.
+        _DEFAULT_CONFIG['CLEAN_URLS'] = True
+        page = Page('content', {'title': 'foobar'})
+        self.assertEqual(page.save_as, 'foobar/index.html')
+        self.assertEqual(page.url, 'foobar/')
+
+        _DEFAULT_CONFIG['CLEAN_URLS'] = False
+        _DEFAULT_CONFIG['CREATE_CLEAN_URLS'] = False
+        _DEFAULT_CONFIG['LINK_CLEAN_URLS'] = True
+        page = Page('content', {'title': 'foobar'})
+        self.assertEqual(page.save_as, 'foobar.html')
+        self.assertEqual(page.url, 'foobar/')
+
+        _DEFAULT_CONFIG['CREATE_CLEAN_URLS'] = True
+        _DEFAULT_CONFIG['LINK_CLEAN_URLS'] = False
+        page = Page('content', {'title': 'foobar'})
+        self.assertEqual(page.save_as, 'foobar/index.html')
+        self.assertEqual(page.url, 'foobar/index.html')
+
+        _DEFAULT_CONFIG['CREATE_CLEAN_URLS'] = True
+        _DEFAULT_CONFIG['LINK_CLEAN_URLS'] = True
+        page = Page('content', {'title': 'foobar'})
+        self.assertEqual(page.save_as, 'foobar/index.html')
+        self.assertEqual(page.url, 'foobar/')
+
+        _DEFAULT_CONFIG['CREATE_CLEAN_URLS'] = False
+        _DEFAULT_CONFIG['LINK_CLEAN_URLS'] = False

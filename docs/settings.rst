@@ -29,7 +29,10 @@ Setting name (default value)                        what does it do?
 `AUTHOR`                                            Default author (put your name)
 `CLEAN_URLS` (``False``)                             If set to `True`, the URLs will not be suffixed by
                                                     `.html`, so you will have to setup URL rewriting on 
-                                                    your web server.
+                                                    your web server. Note that this setting has been
+                                                    replaced by CREATE_CLEAN_URLS and LINK_CLEAN_URLS.
+`CREATE_CLEAN_URLS` (``False``)                     Save the blog posts as ``index.html`` inside 
+                                                    directories named for the slug.
 `DATE_FORMATS` (``{}``)                             If you do manage multiple languages, you can
                                                     set the date formatting here.
 `DEFAULT_CATEGORY` (``'misc'``)                     The default category to fallback on.
@@ -43,6 +46,7 @@ Setting name (default value)                        what does it do?
 `JINJA_EXTENSIONS` (``[]``)                         A list of any Jinja2 extensions you want to use.
 `DELETE_OUTPUT_DIRECTORY` (``False``)               Delete the output directory and just
                                                     the generated files.
+`LINK_CLEAN_URLS` (``False``) i                     Link to blog posts without the `.html` suffix.
 `LOCALE` (''[1]_)                                   Change the locale. A list of locales can be provided 
                                                     here or a single string representing one locale.
                                                     When providing a list, all the locales will be tried 

@@ -53,16 +53,17 @@ class Page(object):
             self.slug = slugify(self.title)
 
         # create save_as from the slug (+lang)
+        clean_url = ''
         if not hasattr(self, 'save_as') and hasattr(self, 'slug'):
             if self.in_default_lang:
-                if settings.get('CLEAN_URLS', False):
+                if settings.get('CREATE_CLEAN_URLS', False) or settings.get('CLEAN_URLS', False):
                     self.save_as = '%s/index.html' % self.slug
                 else:
                     self.save_as = '%s.html' % self.slug
 
                 clean_url = '%s/' % self.slug
             else:
-                if settings.get('CLEAN_URLS', False):
+                if settings.get('CREATE_CLEAN_URLS', False) or settings.get('CLEAN_URLS', False):
                     self.save_as = '%s-%s/index.html' % (self.slug, self.lang)
                 else:
                     self.save_as = '%s-%s.html' % (self.slug, self.lang)
@@ -70,7 +71,7 @@ class Page(object):
                 clean_url = '%s-%s/' % (self.slug, self.lang)
 
         # change the save_as regarding the settings
-        if settings.get('CLEAN_URLS', False):
+        if settings.get('LINK_CLEAN_URLS', False) or settings.get('CLEAN_URLS', False):
             self.url = clean_url
         elif hasattr(self, 'save_as'):
             self.url = self.save_as
