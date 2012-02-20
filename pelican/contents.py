@@ -37,7 +37,7 @@ class Page(object):
                 self.author = settings['AUTHOR']
             else:
                 self.author = getenv('USER', 'John Doe')
-                warning(u"Author of `{0}' unknow, assuming that his name is `{1}'".format(filename or self.title, self.author))
+                warning(u"Author of `{0}' unknown, assuming that his name is `{1}'".format(filename or getattr(self, 'title', ''), self.author))
 
         # manage languages
         self.in_default_lang = True
